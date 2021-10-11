@@ -25,6 +25,7 @@ To start up with Django web development install Django - ```   python -m pip ins
 * db-sqlite3      -  ``` pip install db-sqlite3 '''
 * crispy-forms    -  ``` pip install django-crispy-forms '''
 * filter          -  ``` pip install django filter '''
+* pillow          -  ``` pip install pillow '''
 
 # Installation
 * To start with with an Django project open terminal and type command - ``` django-admin startproject <Project Name> ```
