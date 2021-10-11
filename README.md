@@ -20,6 +20,12 @@ Thus, we present a web application that connects small scale businesses with lar
 # Prerequisites
 To start up with Django web development install Django - ```   python -m pip install Django    ```
 
+# Requirements
+Libraries Installation Commands:
+db-sqlite3      -  ``` pip install db-sqlite3 '''
+crispy-forms    -  ``` pip install django-crispy-forms '''
+filter          -  ``` pip install django filter '''
+
 # Installation
 * To start with with an Django project open terminal and type command - ``` django-admin startproject <Project Name> ```
 
