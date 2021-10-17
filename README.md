@@ -28,7 +28,7 @@ To start up with Django web development install Django - ```   python -m pip ins
 * pillow          -  ``` pip install pillow ```
 
 # Installation
-* To start with with an Django project open terminal and type command - ``` django-admin startproject <Project Name> ```
+* To start with with an Django project open terminal and type command - ``` python manage.py runserver ```
 
 ```
 <Project Name>/
