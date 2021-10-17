@@ -1,0 +1,141 @@
+{%load static%}
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+      />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous"
+        />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <title>AboutUs</title>
+      </head>
+      <style>
+      body,
+      html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      }
+      #bg {
+      background-color: #0a043c;
+      backdrop-filter: blur(1px);
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      }
+      .topnav {
+      background: linear-gradient(to right, #2193b0, #6dd5ed);
+      /*background-color: black;*/
+      overflow: visible;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+      }
+      .topnav a {
+      float: left;
+      padding: 14px 5px;
+      text-decoration: none;
+      font-size: 17px;
+      }
+      .topnav a:hover {
+      /*background-color: #f4f493;*/
+      }
+      .topnav a.active {
+      color: rgb(255, 102, 0);
+      text-shadow: 2px 2px 7px #ebab4a;
+      transition: all 0.8s;
+      border-radius: 10px;
+      }
+      .topnav a.profile-pointer {
+      color: #0a043c;
+      text-shadow: 2px 2px 7px #ebab4a;
+      float: right;
+      position: relative;
+      margin-right: 10px;
+      margin-top: 7px;
+      }
+      .topnav a.profile-pointer:hover {
+      background-color: #f4f493;
+      border-radius: 50%;
+      }
+      #logo-image {
+      width: 300px;
+      height: 62px;
+      overflow: hidden;
+      margin-top: -6px;
+      }
+      .slideshow {
+      overflow: hidden;
+      height: 510px;
+      width: 900px;
+      margin: 0 auto;
+      border-radius:10px ;
+      box-shadow: 0px 0px 29px 2px rgba(0,0,0,0.48);
+      -webkit-box-shadow: 0px 0px 29px 2px rgba(0,0,0,0.48);
+      -moz-box-shadow: 0px 0px 29px 2px rgba(0,0,0,0.48);
+      transition: all 1s;
+      }
+      
+      .slide {
+      color: white;
+      float: left;
+      height: 510px;
+      width: 900px;
+      }
+      .slideshow:hover {
+      transform: translateY(-1rem);
+      box-shadow: 10px 10px 23px -11px rgba(199,231,237,0.75);
+      -webkit-box-shadow: 10px 10px 23px -11px rgba(199,231,237,0.75);
+      -moz-box-shadow: 10px 10px 23px -11px rgba(199,231,237,0.75);
+      }
+      .slideshow:hover~.card{
+      transition: all 1s;
+      transform: translateX(10px);
+      }
+      body {
+      overflow-y: scroll;
+      }
+      body::-webkit-scrollbar {
+      display: none;
+      }
+      body{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      }
+      </style>
+      <body id="bg" >
+        <div class="topnav" style="background-color: white;">
+          <a class="active" href="{% url 'home' %}">
+            <img
+            id="logo-image"
+            src="{% static 'images/logo.png' %}"
+            alt="VocalForLocal"
+            />
+          </a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="slideshow">
+          <div class="slide">
+            <img src="{% static 'images/about final.jpeg' %}" alt="poster">
+          </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      </body>
+    </html>

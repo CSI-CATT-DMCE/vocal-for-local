@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% block title %} Upload {% endblock %}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="{%static '/css/upload.css' %}" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color:  #0a043c;">
+  <div class="topnav">
+    <a class="active" href="{% url 'home' %}">
+      <img id="logo" src="{% static 'images/logo.png' %}" alt="VocalForLocal" />
+    </a>
+    <div class="search">
+      <form action="#">
+        <input type="text" placeholder=" Search..." name="search" />
+        <button  id="srch">
+          <i class="fa fa-search" style="font-size: 18px"> </i>
+        </button>
+      </form>
+    </div>
+    <span class="hello-msg">
+      Hello, {% if user.is_authenticated %} {{request.user}} {% else %} User
+      {% endif %}
+    </span>
+    {% if user.is_authenticated %}
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"       style="margin-left: 160px;">
+      <i class="far fa-user-circle" style="color:#0a043c; font-size: 45px;"></i>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="border-radius: 10px;margin-left: 160px;">
+      <li><a class="dropdown-item" href="{% url 'home' %}"><i class="fas fa-home" style="font-size: 17px; margin-right: 5px;"></i>Home</a></li>
+      <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt" style="font-size: 17px; margin-right: 5px;"></i>Logout</a></li>
+    </ul>
+    {% endif %}
+  </div>
+  <div class="menu-bar">
+    <ul>
+      <li>
+        <form method="POST" action='/home/'>
+          {% csrf_token %}
+        <i class="fa fa-list-alt" aria-hidden="true" style="font-size: 18px; padding-right: 8px; color: white"></i>
+          <select name="location" class="custom-select" style="width: 200px; height: 38px;">
+            <option selected value= "0">Location</option>
+            <option value="1">Andhra Pradesh</option>
+            <option value="2">Arunachal Pradesh</option>
+            <option value="3">Assam</option>
+            <option value="4">Bihar</option>
+            <option value="5">Chhattisgarh</option>
+            <option value="6">Goa</option>
+            <option value="7">Gujarat</option>
+            <option value="8">Haryana</option>
+            <option value="9">Himachal Pradesh</option>
+            <option value="10">Jammu & Kashmir</option>
+            <option value="11">Jharkhand</option>
+            <option value="12">Karnataka</option>
+            <option value="13">Kerala</option>
+            <option value="14">Madhya Pradesh</option>
+            <option value="15">Maharashtra</option>
+            <option value="16">Manipur</option>
+            <option value="17">Meghalaya</option>
+            <option value="18">Mizoram</option>
+            <option value="19">Nagaland</option>
+            <option value="20">Odisha</option>
+            <option value="21">Punjab</option>
+            <option value="22">Rajasthan</option>
+            <option value="23">Sikkim</option>
+            <option value="24">Tamil Nadu</option>
+            <option value="25">Telangana</option>
+            <option value="26">Tripura</option>
+            <option value="27">Uttar Pradesh</option>
+            <option value="28">Uttarakhand</option>
+            <option value="29">West Bengal</option>
+          </select>
+
+          <select name="category-option" class="custom-select" style="width: 200px; height: 38px;">
+            <option selected value="0">Category</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Art">Art</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Food Items">Food Items</option>
+            <option value="Handicraft">Handicraft</option>
+            <option value="Home Decor">Home Decor</option>
+            <option value="Others">Others</option>
+          </select>
+
+          <span style="padding-right: 15px;">
+            <select name="availability-option" class="custom-select" style="width: 200px; height: 38px;">
+              <option selected value= "0">Shipping</option>
+              <option value="Local">Local</option>
+              <option value="Span-India">Span-India</option>
+              <option value="Global">Global</option>
+            </select>
+          </span>
+          <button class="btn btn-outline-secondary" type="submit" name="filter-btn" style="border: 1px solid ;color:
+            white;font-weight: bold;">
+            <i class="fas fa-filter" style="font-size: 18px; padding-right: 8px; color: white"></i>Filter
+          </button>
+        </form>
+      </li>
+      <li style="margin-top: 20px; border: none;">
+        <i class="fa fa-info-circle" style="font-size: 18px; padding-right: 2px; color: white">
+        </i>
+        <button class="home-about">
+          <a class="active" href="{% url 'about' %}" style="text-decoration: none;">About</a>
+        </button>
+      </li>
+    </ul>
+  </div>
+  {% if upload_successful %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align: center; position: absolute; z-index: 3; width: 100%;">
+    <strong>Post Uploaded Successfully!</strong> <a href="{% url 'profile' %}" style="color: rgb(70, 117, 101);">Check your post here.</a> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+  <br>
+  <div id="slideshow">
+    <div class="slide-wrapper">
+      <div class="slide">
+        <img src="{% static 'images/banner.PNG' %}" alt="poster">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <hr style="width: 80%; height: 0.5px; background-color: white;">
+  <br>
+  <div class="center">
+    <div class="card">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level center">
+          </div>
+          <div class="icon">
+            <img id="profile-logo" src = "{% static 'images/Capture.PNG' %}" alt="profile-logo">
+          </div>
+        </div>
+      </div>
+      <div class="general">
+        <h1>NEW POST</h1>
+        <div class="edit-form">
+          {% load crispy_forms_tags %}
+          <form enctype="multipart/form-data" method="POST" action="/upload/">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-lg-5 mb-1">
+                {{form.name|as_crispy_field}}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-lg-5 mb-1">
+                {{form.category|as_crispy_field}}
+              </div>
+              &ensp;
+              <div class="form-group col-lg-5 mb-1">
+                {{form.availability|as_crispy_field}}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-lg-5 mb-1">
+                {{form.price|as_crispy_field}}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-lg-5 mb-1">
+                {{form.description|as_crispy_field}}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-lg-5 mb-4">
+                 {{ form.image|as_crispy_field }}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-sm-3 mb-4">
+                <button class="upload-btn" type="submit" , name='upload'>Upload</button> 
+              </div>
+              <div class="form-group col-sm-3 mb-4">
+                <button id="reset" type="reset" onclick='remove_img()'>Reset</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function readURL(input){
+      if(input.files && input.files[0]){
+        var reader = new FileReader();
+        reader.onload = function(e){
+          $('#profile-logo').attr('src',e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function remove_img(){
+      document.getElementById('profile-logo').setAttribute('src',"{% static 'x' %}".replace('x','images/Capture.PNG'))
+    }
+  </script>
+  <div class="footer" style="padding-left: 10px; margin-top: 700px;">
+    <hr style="width: 95%;height: 0.5px; background-color: white;"/>
+    <h3 style="color: white;">Contact us at: <span style="margin:0px 5px;"><i class="fab fa-facebook"></i></span> 
+      <span style="margin:0px 5px;"><i class="fab fa-instagram"></i></span><span style="margin:0px 5px;"><i class="fab fa-twitter"></i></span> 
+      <div><span style="font-size: 18px;"></span></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

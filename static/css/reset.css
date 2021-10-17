@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ .topnav {
+   background: linear-gradient(to right, #2193b0, #6dd5ed);
+   /*background-color: black;*/
+
+  overflow: visible;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.topnav a {
+  float: left;
+  padding: 14px 5px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+.topnav a:hover {
+  /*background-color: #f4f493;*/
+}
+
+.topnav a.active {
+  color: rgb(255, 102, 0);
+  text-shadow: 2px 2px 7px #ebab4a;
+  transition: all 0.8s;
+  border-radius: 10px;
+}
+
+.topnav a.profile-pointer {
+  color: #0a043c;
+  text-shadow: 2px 2px 7px #ebab4a;
+  float: right;
+  position: relative;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+
+.topnav a.profile-pointer:hover {
+  background-color: #f4f493;
+  border-radius: 50%;
+}

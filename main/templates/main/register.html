@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+  </head>
+  <body id="bg" style="background:  #0a043c;" >
+    <link rel="stylesheet" type="text/css" href="{%static '/css/register.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
+        <div class="topnav">
+          <a class="active" href="{% url 'home' %}">
+            <img id='logo-image' src="{% static 'images/logo.png' %}" alt="VocalForLocal" />
+          </a>
+          <a class="about-section" href="{% url 'about' %}" style="font-size: 20px; font-weight: bold; text-decoration: none">AboutUs</a>
+        </div>
+        
+        <div class="container" style="width: 900px; height: 550px; padding-left: 0px;">
+          <div class="user">
+            <h1 style="position:absolute; margin: 30px 55px; font-weight: bolder; font-size:50px;">SIGN UP</h1>
+          </div>
+          <div class="general">
+            <div style="margin-top: 20px; margin-left: 20px; ">
+              <p style="margin-bottom: 0px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bold; font-size: 30px; color: #90b7fa;">CREATE ACCOUNT</p>
+              Sign up to VFL
+            </div>
+            <div class="d-flex justify-content-center form_container" style="margin-top: 100px;">
+              <form method="POST" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label"> username</label>
+                  <input name="username" type="text" class="form-control" id="formGroupExampleInput" placeholder="username" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">email</label>
+                  <input name="email" type="email" class="form-control" id="formGroupExampleInput" placeholder="email" autocomplete="off">
+                </div>
+                
+                
+                <div class="d-flex justify-content-center mt-3 login_container">
+                  <input class="btn login_btn" type="submit" value="Register Account" style="background: #c9d9f5;border-radius: 20px;
+                  font-weight: bold; margin: 5px 10px; color: white;" />
+                </div>
+              </form>
+            </div>
+            {{form.errors}}
+            <div class="mt-4">
+              <div class="d-flex justify-content-center links" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Already have an account?
+                <a href="{% url 'login' %}" class="ml-2" style="font-weight: bold; color: #90b7fa;">Login</a>
+              </div>
+            </div>
+            <br>
+            {% for message in messages %}
+              <p id="messages">{{message}}</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <script>
+      var form_fields = document.getElementsByTagName("input");
+      form_fields[1].placeholder = "Username..";
+      form_fields[2].placeholder = "Email..";
+      
+      for (var field in form_fields) {
+      form_fields[field].className += " form-control";
+      }
+      </script>
+    </body>
+  </html>

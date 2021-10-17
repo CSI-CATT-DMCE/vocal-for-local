@@ -1,0 +1,359 @@
+body {
+  overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.hello-msg {
+    position: relative;
+    float: right;
+    font: verdana;
+    font-weight: 500;
+    font-size: 25px;
+    color: #0a043c;
+    margin-right: 50px;
+    margin-top: 22px;
+    text-align: center;
+  }
+
+.topnav {
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    overflow: visible;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .topnav a {
+    float: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+ 
+  
+  .topnav a.active {
+    color: rgb(255, 102, 0);
+    text-shadow: 2px 2px 7px #ebab4a;
+    border-radius: 10px;
+    transition: all 0.8s;
+  }
+  
+  .topnav a.profile-pointer {
+    color: #ffff;
+    text-shadow: 2px 2px 7px #ebab4a;
+    float: right;
+    position: relative;
+    margin-right: 10px;
+    margin-top: 7px;
+  }
+  
+  .topnav a.profile-pointer:hover {
+    background-color: #f4f493;
+    border-radius: 50%;
+  }
+  
+  .search input[type="text"] {
+    width: 500px;
+    height: 40px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    background-color: #ffff;
+  }
+  
+  .search input[type="text"]:hover {
+  background-color: #f2f2f2;
+}
+
+.search {
+  float: left;
+  margin-left: 200px;
+  margin-top: 1px;
+}
+
+#srch{
+  transition: all 0.5s;
+}
+
+#srch:hover{
+  background-color: #0a043c;
+  transform: scale(1.1);
+}
+
+#srch:focus{
+  outline: none;
+}
+
+#srch:active{
+  transform: scale(0.95);
+}
+
+.search button {
+  height: 40px;
+  width: 40px;
+  background-color: #0a043c;
+  color: #ffff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  padding: 5px 10px;
+  margin-right: 16px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+  
+  #logo {
+    width: 300px;
+    height: 100%;
+    overflow: hidden;
+    margin-top: -6px;
+  }
+  
+  .drop-down {
+    overflow: hidden;
+  }
+  
+  .drop-down .dropbtn {
+    position: relative;
+    background:none;
+    color: white;
+    float: right;
+    margin-top: 15px;
+    margin: 0;
+    padding: 20px 20px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .drop-down-content {
+    min-width: 160px;
+    margin-top: 2.5px;
+    border-radius: 20px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .drop-down-content a {
+    border-radius: 15px;
+    margin-top: 5px;
+    color: black;
+    padding: 4px 10px;
+    display: block;
+    float: none;
+    text-decoration: none;
+    text-align: left;
+  }
+  
+  .drop-down-content a:hover {
+    background-color: #f4f493;
+  }
+  
+  .drop-down:hover .drop-down-content {
+    display: block;
+  }
+
+  .dropdown-toggle::after{
+    display: none;
+  }
+  
+  .dropdown-toggle{
+    transition: all 0.8s;
+  }
+  
+  .dropdown-toggle:hover{
+    transform: scale(1.1);
+    border-radius: 20px;
+  }
+  
+  .dropdown-item{
+    transition: all 0.5s;
+  }
+  
+  .dropdown-item:hover{
+    background-color: #f4f493;
+  }
+  
+  
+  .menu-bar{
+  /*overflow: hidden;*/
+  position:static;
+
+  margin-top: 100px;
+  top: 86px;
+  
+
+  width: 100%;
+  text-align: left;
+}
+
+.menu-bar ul{
+  display : inline-flex;
+  list-style: none;
+  margin-top: unset;
+  margin-bottom: unset;
+}
+
+.menu-bar ul li{
+  width:200;
+  padding-right : 20px;
+  margin-right : 20px;
+  margin : 15px 15px;
+  border-right: 2px solid;
+  color: white;
+  font-weight: bold;
+}
+
+.home-about {
+  
+  border: none;
+  background-color: #0a043c;
+
+  
+ 
+}
+
+
+.home-about a{
+  
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+}
+  
+  .location input[type="text"] {
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffff;
+  }
+  
+  .location input[type="text"]:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .locationbtn{
+    height: 20px;
+    width: 15px;
+    background: #97bedd;
+    border:none;
+  }
+
+  .dropdown1 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .drop1 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .drop1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+
+  .drop1 a:hover {background-color: #ddd;}
+  
+  .dropdown1:hover .drop1 {display: block; margin-top: 5px;}
+  
+  .dropdown1:hover .category {background-color: #3e8e41;}
+
+  .dropdown2 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .drop2 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .drop2 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+
+  .drop2 a:hover {background-color: #ddd;}
+  
+  .dropdown2:hover .drop2 {display: block; margin-top: 5px;}
+  
+  .dropdown2:hover .filter {background-color: #3e8e41;}
+
+  .container-card{
+    width: 100%;
+    height: 245px;
+    background-color: #8a3b41; 
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 15px;
+    transition: all 0.5s;
+    box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.48);
+  }
+  .container-card:hover{
+    transform: translateX(-10px);
+  }
+  .container-card:hover~.container-card{
+    transform: translateY(3px);
+  }
+
+  .image{
+    box-sizing: padding-box;
+    position: absolute;
+    width: 300px;
+    height: 210px;
+    background-size:cover; 
+    background-position: center;
+    padding-right: 5px;
+    border-right:2px white solid;
+  }
+
+  .card-info{
+    position: absolute;
+    margin-left: 350px;
+    width: 735px;
+    height: 210px;
+  }
+
+  .description{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    width: 700px;
+    height: 100px;
+  }
