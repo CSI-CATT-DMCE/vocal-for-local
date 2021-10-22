@@ -23,6 +23,7 @@ Thus, we present a web application that connects small scale businesses with lar
 
 # Installation
 * To start with with an Django project open terminal and type command - ``` python manage.py runserver ```
+* To access the database and get admin privileges, open terminal and type command - ``` python manage.py createsuperuser ```
 
 ```
 <Project Name>/
@@ -35,8 +36,8 @@ Thus, we present a web application that connects small scale businesses with lar
         wsgi.py
 ```
 
-* Create **static** folder for separating css files and maintaining images for the website
-* Create **template/main** folder for housing html files
+* **static** folder for housing css files and maintaining images for the website
+* **template/main** folder for housing html files
 
 
 ![Capture](https://user-images.githubusercontent.com/69159108/116813110-cfbe3200-ab6f-11eb-95c3-e5826c8b6284.PNG)
