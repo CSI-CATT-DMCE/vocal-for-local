@@ -17,15 +17,9 @@ Thus, we present a web application that connects small scale businesses with lar
 * The consumers can connect with the business of their choice.
 * The consumers can post feedback of their experience with a product.
 
-# Prerequisites
-To start up with Django web development install Django - ```   python -m pip install Django    ```
-
 # Requirements
-* Libraries Installation Commands: 
-* db-sqlite3      -  ```  pip install db-sqlite3 ```
-* crispy-forms    -  ``` pip install django-crispy-forms ```
-* filter          -  ``` pip install django filter ```
-* pillow          -  ``` pip install pillow ```
+* Install all the libraries mentioned in requirments.txt by running the command given below after navigating to the folder where you have cloned the repo
+``` pip install -r requirements.txt ```
 
 # Installation
 * To start with with an Django project open terminal and type command - ``` python manage.py runserver ```
