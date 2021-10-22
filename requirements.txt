@@ -1,0 +1,5 @@
+Django==3.2.8
+db-sqlite3==0.0.1
+django-crispy-forms==1.13.0
+django-filter==21.1
+Pillow==8.4.0
