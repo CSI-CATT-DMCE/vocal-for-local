@@ -60,3 +60,7 @@ Thus, we present a web application that connects small scale businesses with lar
 * **Search Result Page**
 
 ![image](https://i.imgur.com/chNtdK2.png)
+
+## Maintainers
+* Chirag Mahajan - [CVM0410](https://github.com/CVM0410)
+* Jaykumar Sankpal - [jaykumar23](https://github.com/jaykumar23)
